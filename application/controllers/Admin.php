@@ -6,6 +6,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->helper("url");
+        $this->load->helper("form");
     }
 
     public function index()
@@ -16,7 +17,12 @@ class Admin extends CI_Controller
 
     public function post_list()
     {
-        $this->load->view('admin/post_list.html');
+        $this->load->view('admin/post/list.html');
+    }
+
+    public function post_save()
+    {
+        $this->load->view('admin/post/save.php');
     }
 }
 
