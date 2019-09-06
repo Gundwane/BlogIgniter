@@ -11,8 +11,11 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        $name = "asd";
-        $this->load->view('admin/index.html', $name);
+        $data['name'] = 'Max';
+        $data['name'] = 'Rick';
+        $data['lastname'] = 'Rockatansky';
+        $data['lastname'] = 'Deckard';
+        $this->load->view('admin/index.php', $data);
     }
 
     public function post_list()
