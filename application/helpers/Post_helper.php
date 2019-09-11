@@ -2,5 +2,5 @@
 
 function posted()
 {
-    return array("si" => "si", "no" => "no");
+    return array("si" => "Si", "no" => "No");
 }

@@ -149,7 +149,7 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php $this->load->view("admin/footer"); ?>
+            <?php $this->load->view("admin/template/footer"); ?>
             <div class="control-sidebar-bg"></div>
         </div>
         <!-- ./wrapper -->

@@ -8,15 +8,12 @@ class Admin extends CI_Controller
         $this->load->helper("url");
         $this->load->helper("form");
         $this->load->helper("Post_helper");
+        $this->load->library("parser");
     }
 
     public function index()
     {
-        $data['name'] = 'Max';
-        $data['name'] = 'Rick';
-        $data['lastname'] = 'Rockatansky';
-        $data['lastname'] = 'Deckard';
-        $this->load->view('admin/index.php', $data);
+        $this->load->view('admin/index.php');
     }
 
     public function post_list()
@@ -27,9 +24,8 @@ class Admin extends CI_Controller
     public function post_save()
     {
         $data["data_posted"] = posted();
-        $this->load->view('admin/post/save.php', $data);
+        $view["body"] = $this->load->view('admin/post/save', $data, TRUE);
+
+        $this->parser->parse("admin/template/body", $view);
     }
 }
-
-
-///CHEQUEAR. No se ve bien la web. Falta js o css.

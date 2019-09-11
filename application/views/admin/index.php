@@ -1,2 +1,1 @@
-<?php foreach ($data as $item)?>
-<li><?php echo $item ?></li>
+<h1>Hello there</h1>
