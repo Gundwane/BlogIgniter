@@ -156,6 +156,7 @@
 
 
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
         <!-- AdminLTE App -->
         <script src="<?php echo base_url(); ?>assets/js/admin/adminlte.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/admin/demo.js"></script>
