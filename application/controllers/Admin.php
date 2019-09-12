@@ -18,12 +18,15 @@ class Admin extends CI_Controller
 
     public function post_list()
     {
-        $this->load->view('admin/post/list.html');
+        $view["body"] = $this->load->view("admin/post/list", NULL, TRUE);
+        $view["title"] = "Posts";
+        $this->parser->parse('admin/template/body', $view);
     }
 
     public function post_save()
     {
         $data["data_posted"] = posted();
+        $view["title"] = "Crear Post";
         $view["body"] = $this->load->view('admin/post/save', $data, TRUE);
 
         $this->parser->parse("admin/template/body", $view);

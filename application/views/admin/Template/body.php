@@ -30,7 +30,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-
+                        {title}
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -49,10 +49,9 @@
                         <div class="box-body">
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">Condensed Full Width Table</h3>
                                 </div>
                                 <!-- /.box-header -->
-                                <div class="box-body no-padding">
+                                <div class="box-body">
                                     {body}
                                 </div>
                                 <!-- /.box-body -->
@@ -71,6 +70,7 @@
 
 
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
         <!-- AdminLTE App -->
         <script src="<?php echo base_url(); ?>assets/js/admin/adminlte.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/admin/demo.js"></script>
