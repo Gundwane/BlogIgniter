@@ -1,5 +1,7 @@
 
-<?php echo form_open('','class="my_form" enctype="multipart/form-data" '); ?>
+<?php echo form_open('','class="my_form" enctype="multipart/form-data"'); ?>
+
+<?php echo validation_errors() ?>
     <div class="form-group">
         <?php 
             echo form_label('Titulo','title');

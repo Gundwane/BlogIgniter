@@ -32,7 +32,7 @@ class Admin extends CI_Controller
             $this->form_validation->set_rules('content', 'Contenido', 'required|min_length[10]');
             $this->form_validation->set_rules('description', 'Descripción', 'max_length[100]');
             $this->form_validation->set_rules('posted', '', 'required');
-
+            
             if($this->form_validation->run())
             {
                 $save = array
@@ -42,10 +42,9 @@ class Admin extends CI_Controller
                     'description' => $this->input->post("description"),
                     'posted' => $this->input->post("posted")
                 );
-
                 $post_id = $this->Post->insert($save);
             }else {
-                echo validation_errors();
+                // echo validation_errors();
             }
         }
 
