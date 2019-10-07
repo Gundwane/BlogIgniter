@@ -1,7 +1,6 @@
 
 <?php echo form_open('','class="my_form" enctype="multipart/form-data"'); ?>
 
-<?php echo validation_errors() ?>
     <div class="form-group">
         <?php 
             echo form_label('Titulo','title');
@@ -16,6 +15,7 @@
 
             echo form_input($text_input);
         ?>
+        <?php echo form_error('title', '<div class="text-error">', '</div>'); ?>
     </div>
     <div class="form-group">
         <?php 
@@ -31,6 +31,7 @@
 
             echo form_input($text_input);
         ?>
+        <?php echo form_error('url_clean', '<div class="text-error">', '</div>'); ?>
     </div>
     <div class="form-group">
         <?php 
@@ -46,6 +47,7 @@
 
             echo form_input($text_area);
         ?>
+        <?php echo form_error('content', '<div class="text-error">', '</div>'); ?>
     </div>
     <div class="form-group">
         <?php 
@@ -61,6 +63,7 @@
 
             echo form_input($text_area);
         ?>
+        <?php echo form_error('description', '<div class="text-error">', '</div>'); ?>
     </div>
     <div class="form-group">
         <?php 
@@ -77,6 +80,7 @@
 
             echo form_input($text_area);
         ?>
+        <?php echo form_error('image', '<div class="text-error">', '</div>'); ?>
     </div>
     <div class="form-group">
         <?php 
