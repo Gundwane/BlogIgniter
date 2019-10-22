@@ -92,10 +92,10 @@ class CI_Model {
 		return $query->row();
 	}
 
-	public function update($id)
+	public function update($id, $data)
 	{
 		$this->db->where($this->table_id, $id);
-		$this->db->update($this->table);
+		$this->db->update($this->table, $data);
 	}
 
 	public function delete($id)

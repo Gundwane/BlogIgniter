@@ -43,8 +43,8 @@ class Admin extends CI_Controller
                     'posted' => $this->input->post("posted")
                 );
                 $post_id = $this->Post->insert($save);
-            }else {
-                // echo validation_errors();
+
+                $this->upload($post_id, $save);
             }
         }
 
@@ -53,5 +53,46 @@ class Admin extends CI_Controller
         $view["body"] = $this->load->view('admin/post/save', $data, TRUE);
 
         $this->parser->parse("admin/template/body", $view);
+    }
+
+    private function upload($post_id, $title)
+    {
+        $image = "image";
+
+        $title = clean_name($title);
+
+        //Configuraciones de carga
+        $config['upload_path'] = 'uploads/post';
+        $config['file_name'] = $title;
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 5000;
+        $config['overwrite'] = TRUE;
+
+        //Cargamos la librería
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload($image))
+        {
+            $save = array(
+                'image' => $title . $data["file_ext"]
+            );
+
+            $this->post->update($post_id, $save);
+            $this->resize_image($data['full_path'], $title . $data["file_ext"]);
+        }
+    }
+
+    public function resize_image($path_image, $image_name)
+    {
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = '/path/to/image/mypic.jpg';
+        $config['create_thumb'] = TRUE;
+        $config['maintain_ratio'] = TRUE;
+        $config['width'] = 500;
+        $config['height'] = 500;
+
+        $this->load->library('image_lib', $config);
+
+        $this->image_lib->resize();
     }
 }
