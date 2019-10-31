@@ -42,7 +42,7 @@ class Admin extends CI_Controller
                     'description' => $this->input->post("description"),
                     'posted' => $this->input->post("posted")
                 );
-                $post_id = $this->Post->insert($save);
+                $post_id = $this->post->insert($save);
 
                 $this->upload($post_id, $save);
             }
