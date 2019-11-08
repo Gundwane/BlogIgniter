@@ -5,11 +5,13 @@ class Admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->database();
         $this->load->helper("url");
         $this->load->helper("form");
         $this->load->helper("Post_helper");
         $this->load->library("parser");
         $this->load->library("Form_validation");
+        $this->load->model('Post');
     }
 
     public function index()
@@ -42,7 +44,7 @@ class Admin extends CI_Controller
                     'description' => $this->input->post("description"),
                     'posted' => $this->input->post("posted")
                 );
-                $post_id = $this->post->insert($save);
+                $post_id = $this->Post->insert($save);
 
                 $this->upload($post_id, $save);
             }
