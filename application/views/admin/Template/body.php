@@ -13,12 +13,13 @@
         <!-- Theme style -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/admin/AdminLTE.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/admin/custom.css">
+
+        <script src="<?php echo base_url() ?>assets/js/jquery-3.5.1.min.js"></script>
+
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/admin/skins/_all-skins.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
-        <script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -70,7 +71,6 @@
 
 
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
         <!-- AdminLTE App -->
         <script src="<?php echo base_url(); ?>assets/js/admin/adminlte.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/admin/demo.js"></script>
